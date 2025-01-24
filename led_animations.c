@@ -5,6 +5,7 @@
 
 void anima_flor();
 void anima_ampulheta();
+void anima_face();
 
 int main()
 {
@@ -41,6 +42,15 @@ int main()
                 break;
             case '2':  
                 anima_ampulheta();
+                break;
+            case '1':
+                anima_face();
+                break;
+            case 'C':  
+                for (int i = 0; i < LED_COUNT; i++) {
+                    npSetLED(i, 255*0.8, 0, 0);  // Vermelho com 80% de intensidade
+                }
+                npWrite();
                 break;
             default:
                 // Apaga todos os LEDs se o input não for reconhecido
@@ -206,4 +216,111 @@ void anima_ampulheta() {
     // Limpa LEDs ao final
     npClear();
     npWrite();
+}
+
+void anima_face() {
+  int frame_time = 1000;
+
+  // Frame 1
+  npSetLED(23, 255, 0, 0);
+  npSetLED(22, 255, 0, 0);
+  npSetLED(21, 255, 0, 0);
+  npWrite();
+  sleep_ms(frame_time);
+
+  // Frame 2
+  npSetLED(23, 0, 0, 0);
+  npSetLED(22, 0, 0, 0);
+  npSetLED(21, 0, 0, 0);
+  npSetLED(24, 255, 0, 0);
+  npSetLED(20, 255, 0, 0);
+  npSetLED(16, 255, 0, 0);
+  npSetLED(17, 255, 0, 0);
+  npSetLED(18, 255, 0, 0);
+  npWrite();
+  sleep_ms(frame_time);
+
+  // Frame 3
+  npSetLED(24, 0, 0, 0);
+  npSetLED(20, 0, 0, 0);
+  npSetLED(16, 0, 0, 0);
+  npSetLED(17, 0, 0, 0);
+  npSetLED(18, 0, 0, 0);
+  npSetLED(15, 255, 0, 0);
+  npSetLED(19, 255, 0, 0);
+  npSetLED(13, 255, 0, 0);
+  npSetLED(12, 255, 0, 0);
+  npSetLED(11, 255, 0, 0);
+  npWrite();
+  sleep_ms(frame_time);
+
+  // Frame 4
+  npSetLED(15, 0, 0, 0);
+  npSetLED(19, 0, 0, 0);
+  npSetLED(13, 0, 0, 0);
+  npSetLED(12, 0, 0, 0);
+  npSetLED(11, 0, 0, 0);
+  npSetLED(23, 255, 0, 0);
+  npSetLED(21, 255, 0, 0);
+  npSetLED(14, 255, 0, 0);
+  npSetLED(10, 255, 0, 0);
+  npSetLED(6, 255, 0, 0);
+  npSetLED(7, 255, 0, 0);
+  npSetLED(8, 255, 0, 0);
+  npWrite();
+  sleep_ms(frame_time);
+
+  // Frame 5
+  npSetLED(23, 0, 0, 0);
+  npSetLED(21, 0, 0, 0);
+  npSetLED(14, 0, 0, 0);
+  npSetLED(10, 0, 0, 0);
+  npSetLED(6, 0, 0, 0);
+  npSetLED(7, 0, 0, 0);
+  npSetLED(8, 0, 0, 0);
+  npSetLED(16, 255, 0, 0);
+  npSetLED(18, 255, 0, 0);
+  npSetLED(1, 255, 0, 0);
+  npSetLED(2, 255, 0, 0);
+  npSetLED(3, 255, 0, 0);
+  npSetLED(5, 255, 0, 0);
+  npSetLED(9, 255, 0, 0);
+  npWrite();
+  sleep_ms(frame_time);
+
+  // Frame 6
+  npSetLED(23, 0, 0, 0);
+  npSetLED(21, 0, 0, 0);
+  npSetLED(14, 0, 0, 0);
+  npSetLED(10, 0, 0, 0);
+  npSetLED(6, 0, 0, 0);
+  npSetLED(7, 0, 0, 0);
+  npSetLED(8, 0, 0, 0);
+  npSetLED(16, 255, 0, 0);
+  npSetLED(18, 0, 0, 0);
+  npSetLED(1, 255, 0, 0);
+  npSetLED(2, 255, 0, 0);
+  npSetLED(3, 255, 0, 0);
+  npSetLED(5, 255, 0, 0);
+  npSetLED(9, 255, 0, 0);
+  npWrite();
+  sleep_ms(frame_time);
+
+  // Frame 7
+  npSetLED(23, 0, 0, 0);
+  npSetLED(21, 0, 0, 0);
+  npSetLED(14, 0, 0, 0);
+  npSetLED(10, 0, 0, 0);
+  npSetLED(6, 0, 0, 0);
+  npSetLED(7, 0, 0, 0);
+  npSetLED(8, 0, 0, 0);
+  npSetLED(16, 255, 0, 0);
+  npSetLED(18, 255, 0, 0);
+  npSetLED(1, 255, 0, 0);
+  npSetLED(2, 255, 0, 0);
+  npSetLED(3, 255, 0, 0);
+  npSetLED(5, 255, 0, 0);
+  npSetLED(9, 255, 0, 0);
+  npWrite();
+  sleep_ms(frame_time);
 }
