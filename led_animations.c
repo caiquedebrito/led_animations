@@ -6,6 +6,7 @@
 void anima_flor();
 void anima_ampulheta();
 void anima_face();
+void anima_cont();
 
 int main()
 {
@@ -27,6 +28,17 @@ int main()
             case '0':
                 anima_flor();
                 break;
+            case 'B':
+                //Acende todos os LEDs na cor azul com intensidade 100%
+                for(int i = 0; i < LED_COUNT; i++){
+                  npSetLED(i, 0 , 0 , 255);
+                }
+                npWrite();
+                break;            
+            case '3':
+                //Animação da contagem de 0 até 9
+                anima_cont(); 
+                break;  
             case '#':
                 for(int i = 0; i < LED_COUNT; i++){
                   npSetLED(i, 255 * 0.2, 255 * 0.2, 255 * 0.2);
@@ -323,4 +335,167 @@ void anima_face() {
   npSetLED(9, 255, 0, 0);
   npWrite();
   sleep_ms(frame_time);
+}
+
+void anima_cont(){
+
+  int frame_time = 1000;
+
+  // Frame 1 (Dígito 0)
+  npSetLED(23, 20, 0, 0);
+  npSetLED(16, 20, 0, 0);
+  npSetLED(13, 20, 0, 0);
+  npSetLED(6, 20, 0, 0);
+  npSetLED(3, 20, 0, 0);
+  npSetLED(2, 20, 0, 0);
+  npSetLED(1, 20, 0, 0);
+  npSetLED(8, 20, 0, 0);
+  npSetLED(11,20,0,0);
+  npSetLED(18, 20, 0, 0);
+  npSetLED(21, 20, 0, 0);
+  npSetLED(22, 20, 0, 0);
+  npWrite();
+  sleep_ms(frame_time);
+  npClear();
+    
+  // Frame 2 (Dígito 1)
+  npSetLED(22, 20, 0, 0);
+  npSetLED(17, 20, 0, 0);
+  npSetLED(12, 20, 0, 0);
+  npSetLED(7, 20, 0, 0);
+  npSetLED(2, 20, 0, 0);
+  npSetLED(3, 20, 0, 0);
+  npSetLED(1, 20, 0, 0);
+  npSetLED(13, 20, 0, 0);
+  npWrite();
+  sleep_ms(frame_time);
+  npClear();
+
+  // Frame 3 (Dígito 2)
+  npSetLED(23, 20, 0, 0);
+  npSetLED(22, 20, 0, 0);
+  npSetLED(21, 20, 0, 0);
+  npSetLED(18, 20, 0, 0);
+  npSetLED(11, 20, 0, 0);
+  npSetLED(12, 20, 0, 0);
+  npSetLED(13, 20, 0, 0);
+  npSetLED(6, 20, 0, 0);
+  npSetLED(3, 20, 0, 0);
+  npSetLED(2, 20, 0, 0);
+  npSetLED(1, 20, 0, 0);
+  npWrite();
+  sleep_ms(frame_time);
+  npClear();
+
+  // Frame 4 (Dígito 3)
+  npSetLED(23, 20, 0, 0);
+  npSetLED(22, 20, 0, 0);
+  npSetLED(21, 20, 0, 0);
+  npSetLED(18, 20, 0, 0);
+  npSetLED(11, 20, 0, 0);
+  npSetLED(12, 20, 0, 0);
+  npSetLED(13, 20, 0, 0);
+  npSetLED(8, 20, 0, 0);
+  npSetLED(1, 20, 0, 0);
+  npSetLED(2, 20, 0, 0);
+  npSetLED(3, 20, 0, 0);
+  npWrite();
+  sleep_ms(frame_time);
+  npClear();
+
+  // Frame 5 (Dígito 4)
+  npSetLED(21, 20, 0, 0);
+  npSetLED(18, 20, 0, 0);
+  npSetLED(11, 20, 0, 0);
+  npSetLED(8, 20, 0, 0);
+  npSetLED(1, 20, 0, 0);
+  npSetLED(23, 20, 0, 0);
+  npSetLED(16, 20, 0, 0);
+  npSetLED(13, 20, 0, 0);
+  npSetLED(12, 20, 0, 0);
+  npWrite();
+  sleep_ms(frame_time); 
+  npClear();
+
+  // Frame 6 (Dígito 5)
+  npSetLED(21, 20, 0, 0);
+  npSetLED(22, 20, 0, 0);
+  npSetLED(23, 20, 0, 0);
+  npSetLED(16, 20, 0, 0);
+  npSetLED(13, 20, 0, 0);
+  npSetLED(12, 20, 0, 0);
+  npSetLED(11, 20, 0, 0);
+  npSetLED(8, 20, 0, 0);
+  npSetLED(1, 20, 0, 0);
+  npSetLED(2, 20, 0, 0);
+  npSetLED(3, 20, 0, 0);
+  npWrite();
+  sleep_ms(frame_time); 
+  npClear(); 
+
+  // Frame 7 (Dígito 6)
+  npSetLED(21, 20, 0, 0);
+  npSetLED(22, 20, 0, 0);
+  npSetLED(23, 20, 0, 0);
+  npSetLED(16, 20, 0, 0);
+  npSetLED(13, 20, 0, 0);
+  npSetLED(12, 20, 0, 0);
+  npSetLED(11, 20, 0, 0);
+  npSetLED(8, 20, 0, 0);
+  npSetLED(1, 20, 0, 0);
+  npSetLED(2, 20, 0, 0);
+  npSetLED(3, 20, 0, 0);
+  npSetLED(6, 20, 0, 0);
+  npWrite();
+  sleep_ms(frame_time); 
+  npClear(); 
+
+  // Frame 8 (Dígito 7)
+  npSetLED(23, 20, 0, 0);
+  npSetLED(22, 20, 0, 0);
+  npSetLED(17, 20, 0, 0);
+  npSetLED(12, 20, 0, 0);
+  npSetLED(7, 20, 0, 0);
+  npSetLED(2, 20, 0, 0);
+  npSetLED(13, 20, 0, 0);
+  npSetLED(11, 20, 0, 0);
+  npWrite();
+  sleep_ms(frame_time); 
+  npClear();
+
+  // Frame 9 (Dígito 8)
+  npSetLED(23, 20, 0, 0);
+  npSetLED(16, 20, 0, 0);
+  npSetLED(13, 20, 0, 0);
+  npSetLED(6, 20, 0, 0);
+  npSetLED(3, 20, 0, 0);
+  npSetLED(21, 20, 0, 0);
+  npSetLED(18, 20, 0, 0);
+  npSetLED(11, 20, 0, 0);
+  npSetLED(8, 20, 0, 0);
+  npSetLED(1, 20, 0, 0);
+  npSetLED(22, 20, 0, 0);
+  npSetLED(12, 20, 0, 0);
+  npSetLED(2, 20, 0, 0);
+  npWrite();
+  sleep_ms(frame_time); 
+  npClear(); 
+
+  // Frame 6 (Dígito 5)
+  npSetLED(21, 20, 0, 0);
+  npSetLED(22, 20, 0, 0);
+  npSetLED(23, 20, 0, 0);
+  npSetLED(16, 20, 0, 0);
+  npSetLED(13, 20, 0, 0);
+  npSetLED(12, 20, 0, 0);
+  npSetLED(11, 20, 0, 0);
+  npSetLED(8, 20, 0, 0);
+  npSetLED(1, 20, 0, 0);
+  npSetLED(2, 20, 0, 0);
+  npSetLED(3, 20, 0, 0);
+  npSetLED(18,20, 0, 0);
+  npWrite();
+  sleep_ms(frame_time); 
+  npClear(); 
+
 }
