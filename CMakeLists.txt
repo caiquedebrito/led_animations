@@ -35,7 +35,8 @@ pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(led_animations led_animations.c matrix_keyboard.c)
+add_executable(led_animations led_animations.c matrix_keyboard.c neopixel.c)
+
 
 pico_set_program_name(led_animations "led_animations")
 pico_set_program_version(led_animations "0.1")
@@ -60,6 +61,8 @@ target_include_directories(led_animations PRIVATE
 target_link_libraries(led_animations 
         
         )
+# Geração do cabeçalho PIO
+pico_generate_pio_header(led_animations ${CMAKE_CURRENT_LIST_DIR}/ws2818b.pio)
 
 pico_add_extra_outputs(led_animations)
 
