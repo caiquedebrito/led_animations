@@ -2,7 +2,11 @@
 #include "pico/stdlib.h"
 #include "matrix_keyboard.h"
 #include "neopixel.h"
+#include "buzzer.h"
 
+#define BUZZER_PIN 27 //pino do buzzer
+
+//Funções de animação
 void anima_flor();
 void anima_ampulheta();
 void anima_face();
@@ -13,7 +17,8 @@ int main()
     char tecla_pressionada;
 
     stdio_init_all();
-
+    pwm_init_buzzer(BUZZER_PIN);
+    
     npInit(LED_PIN);
     npClear();
 
@@ -36,9 +41,13 @@ int main()
                 npWrite();
                 break;            
             case '3':
-                //Animação da contagem de 0 até 9
+                //Animação da contagem de 0 até 9 e som do buzzer
                 anima_cont(); 
-                break;  
+                break;
+            case '4':
+                //ativa o buzzer
+                beep(BUZZER_PIN, 500);
+                break;
             case '#':
                 for(int i = 0; i < LED_COUNT; i++){
                   npSetLED(i, 255 * 0.2, 255 * 0.2, 255 * 0.2);
@@ -355,6 +364,7 @@ void anima_cont(){
   npSetLED(21, 20, 0, 0);
   npSetLED(22, 20, 0, 0);
   npWrite();
+  beep(BUZZER_PIN, 500);
   sleep_ms(frame_time);
   npClear();
     
@@ -368,6 +378,7 @@ void anima_cont(){
   npSetLED(1, 20, 0, 0);
   npSetLED(13, 20, 0, 0);
   npWrite();
+  beep(BUZZER_PIN, 500);
   sleep_ms(frame_time);
   npClear();
 
@@ -384,6 +395,7 @@ void anima_cont(){
   npSetLED(2, 20, 0, 0);
   npSetLED(1, 20, 0, 0);
   npWrite();
+  beep(BUZZER_PIN, 500);
   sleep_ms(frame_time);
   npClear();
 
@@ -400,6 +412,7 @@ void anima_cont(){
   npSetLED(2, 20, 0, 0);
   npSetLED(3, 20, 0, 0);
   npWrite();
+  beep(BUZZER_PIN, 500);
   sleep_ms(frame_time);
   npClear();
 
@@ -414,6 +427,7 @@ void anima_cont(){
   npSetLED(13, 20, 0, 0);
   npSetLED(12, 20, 0, 0);
   npWrite();
+  beep(BUZZER_PIN, 500);
   sleep_ms(frame_time); 
   npClear();
 
@@ -430,6 +444,7 @@ void anima_cont(){
   npSetLED(2, 20, 0, 0);
   npSetLED(3, 20, 0, 0);
   npWrite();
+  beep(BUZZER_PIN, 500);
   sleep_ms(frame_time); 
   npClear(); 
 
@@ -447,6 +462,7 @@ void anima_cont(){
   npSetLED(3, 20, 0, 0);
   npSetLED(6, 20, 0, 0);
   npWrite();
+  beep(BUZZER_PIN, 500);
   sleep_ms(frame_time); 
   npClear(); 
 
@@ -460,6 +476,7 @@ void anima_cont(){
   npSetLED(13, 20, 0, 0);
   npSetLED(11, 20, 0, 0);
   npWrite();
+  beep(BUZZER_PIN, 500);
   sleep_ms(frame_time); 
   npClear();
 
@@ -478,10 +495,11 @@ void anima_cont(){
   npSetLED(12, 20, 0, 0);
   npSetLED(2, 20, 0, 0);
   npWrite();
+  beep(BUZZER_PIN, 500);
   sleep_ms(frame_time); 
   npClear(); 
 
-  // Frame 6 (Dígito 5)
+  // Frame 10 (Dígito 9)
   npSetLED(21, 20, 0, 0);
   npSetLED(22, 20, 0, 0);
   npSetLED(23, 20, 0, 0);
@@ -495,7 +513,7 @@ void anima_cont(){
   npSetLED(3, 20, 0, 0);
   npSetLED(18,20, 0, 0);
   npWrite();
+  beep(BUZZER_PIN, 500);
   sleep_ms(frame_time); 
   npClear(); 
-
 }
