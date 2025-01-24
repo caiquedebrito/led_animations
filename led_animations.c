@@ -39,19 +39,19 @@ void anima_flor(){
  
   npSetLED(2, 0, 255, 0);
   npWrite();
-  sleep_ms(1000);
+  sleep_ms(250);
 
   npSetLED(7, 0, 255, 0);
   npWrite();
-  sleep_ms(1000);
+  sleep_ms(250);
 
   npSetLED(12, 0, 255, 0);
   npWrite();
-  sleep_ms(1000);
+  sleep_ms(250);
 
   npSetLED(17, 255, 255, 0);
   npWrite();
-  sleep_ms(1000);
+  sleep_ms(250);
 
   for(int i = 0; i < 5; i++){
 
@@ -67,7 +67,7 @@ void anima_flor(){
       npSetLED(23, 0, 0, 0);
 
       npWrite();
-      sleep_ms(1000);
+      sleep_ms(250);
 
     }
     else{
@@ -84,7 +84,7 @@ void anima_flor(){
       npSetLED(12, 0, 255, 0);
 
       npWrite();
-      sleep_ms(1000);
+      sleep_ms(250);
 
     }
   }
@@ -95,7 +95,7 @@ void anima_flor(){
   npSetLED(22, 200, 0, 0);
 
   npWrite();
-  sleep_ms(1000);
+  sleep_ms(250);
 
   npSetLED(16, 255, 0, 0);
   npSetLED(18, 255, 0, 0);
@@ -103,7 +103,7 @@ void anima_flor(){
   npSetLED(22, 255, 0, 0);
 
   npWrite();
-  sleep_ms(1000);
+  sleep_ms(250);
 
   npSetLED(16, 200, 0, 0);
   npSetLED(18, 200, 0, 0);
@@ -111,7 +111,7 @@ void anima_flor(){
   npSetLED(22, 200, 0, 0);
 
   npWrite();
-  sleep_ms(1000);
+  sleep_ms(250);
 
   npSetLED(16, 255, 0, 0);
   npSetLED(18, 255, 0, 0);
@@ -119,7 +119,7 @@ void anima_flor(){
   npSetLED(22, 255, 0, 0);
 
   npWrite();
-  sleep_ms(1000);
+  sleep_ms(250);
 
   npClear();
   npWrite();
