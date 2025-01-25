@@ -35,7 +35,7 @@ pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(led_animations led_animations.c matrix_keyboard.c neopixel.c)
+add_executable(led_animations led_animations.c matrix_keyboard.c neopixel.c buzzer.c)
 
 
 pico_set_program_name(led_animations "led_animations")
@@ -50,7 +50,8 @@ target_link_libraries(led_animations
         pico_stdlib
         hardware_pio
 	    hardware_adc
-        pico_bootrom)
+        pico_bootrom
+        hardware_pwm)
 
 # Add the standard include files to the build
 target_include_directories(led_animations PRIVATE

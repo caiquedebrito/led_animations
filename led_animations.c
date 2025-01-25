@@ -2,8 +2,11 @@
 #include "pico/stdlib.h"
 #include "matrix_keyboard.h"
 #include "neopixel.h"
+#include "buzzer.h"
 
+#define BUZZER_PIN 27 //pino do buzzer
 
+//Funções de animação
 void anima_flor();
 void anima_ampulheta();
 void anima_face();
@@ -15,7 +18,8 @@ int main()
     char tecla_pressionada;
 
     stdio_init_all();
-
+    pwm_init_buzzer(BUZZER_PIN);
+    
     npInit(LED_PIN);
     npClear();
 
@@ -30,6 +34,29 @@ int main()
             case '0':
                 anima_flor();
                 break;
+            case '1':
+                anima_face();
+                break;
+            case '2':  
+                anima_ampulheta();
+                break;
+            case '3':
+                //Animação da contagem de 0 até 9 e som do buzzer
+                anima_cont(); 
+                break;
+            case '4':
+                //ativa o buzzer
+                beep(BUZZER_PIN, 500);
+                break;
+            case '5':
+                // Animação da face feliz
+                anima_sorriso();
+                break;
+            case 'A':
+                // Apaga todos os LEDs
+                npClear();
+                npWrite();
+                break;
             case 'B':
                 //Acende todos os LEDs na cor azul com intensidade 100%
                 for(int i = 0; i < LED_COUNT; i++){
@@ -37,13 +64,9 @@ int main()
                 }
                 npWrite();
                 break;            
-            case '3':
-                //Animação da contagem de 0 até 9
-                anima_cont(); 
-                break;  
-            case '#':
-                for(int i = 0; i < LED_COUNT; i++){
-                  npSetLED(i, 255 * 0.2, 255 * 0.2, 255 * 0.2);
+            case 'C':  
+                for (int i = 0; i < LED_COUNT; i++) {
+                    npSetLED(i, 255*0.8, 0, 0);  // Vermelho com 80% de intensidade
                 }
                 npWrite();
                 break;
@@ -54,34 +77,11 @@ int main()
                 }
                 npWrite();
                 break;
-            case '2':  
-                anima_ampulheta();
-                break;
-            case '1':
-                anima_face();
-                break;
-            case 'C':  
-                for (int i = 0; i < LED_COUNT; i++) {
-                    npSetLED(i, 255*0.8, 0, 0);  // Vermelho com 80% de intensidade
+            case '#':
+                for(int i = 0; i < LED_COUNT; i++){
+                  npSetLED(i, 255 * 0.2, 255 * 0.2, 255 * 0.2); // Acende todos os LEDs na cor branca com intensidade de 20%
                 }
                 npWrite();
-                break;
-            case '6':
-                // Animação da face feliz
-                anima_sorriso();
-                break;
-            case 'A':
-                // Apaga todos os LEDs
-                npClear();
-                npWrite();
-                break;
-
-            default:
-                // Apaga todos os LEDs se o input não for reconhecido
-                for (int i = 0; i < LED_COUNT; i++) {
-                    npSetLED(i, 0, 0, 0);  // Apaga todos os LEDs
-                }
-                npWrite();  // Atualiza os LEDs para o novo estado
                 break;
         }
     }
@@ -350,7 +350,6 @@ void anima_face() {
 }
 
 void anima_cont(){
-
   int frame_time = 1000;
 
   // Frame 1 (Dígito 0)
@@ -367,6 +366,7 @@ void anima_cont(){
   npSetLED(21, 20, 0, 0);
   npSetLED(22, 20, 0, 0);
   npWrite();
+  beep(BUZZER_PIN, 500);
   sleep_ms(frame_time);
   npClear();
     
@@ -380,6 +380,7 @@ void anima_cont(){
   npSetLED(1, 20, 0, 0);
   npSetLED(13, 20, 0, 0);
   npWrite();
+  beep(BUZZER_PIN, 500);
   sleep_ms(frame_time);
   npClear();
 
@@ -396,6 +397,7 @@ void anima_cont(){
   npSetLED(2, 20, 0, 0);
   npSetLED(1, 20, 0, 0);
   npWrite();
+  beep(BUZZER_PIN, 500);
   sleep_ms(frame_time);
   npClear();
 
@@ -412,6 +414,7 @@ void anima_cont(){
   npSetLED(2, 20, 0, 0);
   npSetLED(3, 20, 0, 0);
   npWrite();
+  beep(BUZZER_PIN, 500);
   sleep_ms(frame_time);
   npClear();
 
@@ -426,6 +429,7 @@ void anima_cont(){
   npSetLED(13, 20, 0, 0);
   npSetLED(12, 20, 0, 0);
   npWrite();
+  beep(BUZZER_PIN, 500);
   sleep_ms(frame_time); 
   npClear();
 
@@ -442,6 +446,7 @@ void anima_cont(){
   npSetLED(2, 20, 0, 0);
   npSetLED(3, 20, 0, 0);
   npWrite();
+  beep(BUZZER_PIN, 500);
   sleep_ms(frame_time); 
   npClear(); 
 
@@ -459,6 +464,7 @@ void anima_cont(){
   npSetLED(3, 20, 0, 0);
   npSetLED(6, 20, 0, 0);
   npWrite();
+  beep(BUZZER_PIN, 500);
   sleep_ms(frame_time); 
   npClear(); 
 
@@ -472,6 +478,7 @@ void anima_cont(){
   npSetLED(13, 20, 0, 0);
   npSetLED(11, 20, 0, 0);
   npWrite();
+  beep(BUZZER_PIN, 500);
   sleep_ms(frame_time); 
   npClear();
 
@@ -490,10 +497,11 @@ void anima_cont(){
   npSetLED(12, 20, 0, 0);
   npSetLED(2, 20, 0, 0);
   npWrite();
+  beep(BUZZER_PIN, 500);
   sleep_ms(frame_time); 
   npClear(); 
 
-  // Frame 6 (Dígito 5)
+  // Frame 10 (Dígito 9)
   npSetLED(21, 20, 0, 0);
   npSetLED(22, 20, 0, 0);
   npSetLED(23, 20, 0, 0);
@@ -507,11 +515,12 @@ void anima_cont(){
   npSetLED(3, 20, 0, 0);
   npSetLED(18,20, 0, 0);
   npWrite();
+  beep(BUZZER_PIN, 500);
   sleep_ms(frame_time); 
   npClear();
 }
 
-  // Função para exibir uma animação de rosto sorrindo
+// Função para exibir uma animação de rosto sorrindo
 void anima_sorriso() {
     int frame_time = 1000; // Tempo de cada frame em milissegundos
 
