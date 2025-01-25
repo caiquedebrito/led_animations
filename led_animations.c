@@ -45,12 +45,12 @@ int main()
                 anima_cont(); 
                 break;
             case '4':
-                //ativa o buzzer
-                beep(BUZZER_PIN, 500);
-                break;
-            case '5':
                 // Animação da face feliz
                 anima_sorriso();
+                break;
+            case '5':
+                //ativa o buzzer
+                beep(BUZZER_PIN, 500);
                 break;
             case 'A':
                 // Apaga todos os LEDs
