@@ -3,10 +3,12 @@
 #include "matrix_keyboard.h"
 #include "neopixel.h"
 
+
 void anima_flor();
 void anima_ampulheta();
 void anima_face();
 void anima_cont();
+void anima_sorriso();
 
 int main()
 {
@@ -64,6 +66,16 @@ int main()
                 }
                 npWrite();
                 break;
+            case '6':
+                // Animação da face feliz
+                anima_sorriso();
+                break;
+            case 'A':
+                // Apaga todos os LEDs
+                npClear();
+                npWrite();
+                break;
+
             default:
                 // Apaga todos os LEDs se o input não for reconhecido
                 for (int i = 0; i < LED_COUNT; i++) {
@@ -496,6 +508,47 @@ void anima_cont(){
   npSetLED(18,20, 0, 0);
   npWrite();
   sleep_ms(frame_time); 
-  npClear(); 
+  npClear();
+}
 
+  // Função para exibir uma animação de rosto sorrindo
+void anima_sorriso() {
+    int frame_time = 1000; // Tempo de cada frame em milissegundos
+
+    // Frame 1: Olhos fechados, boca neutra
+    npClear();
+    npSetLED(10, 255, 255, 0); // Olho esquerdo
+    npSetLED(13, 255, 255, 0); // Olho direito
+    npWrite();
+    sleep_ms(frame_time);
+
+    // Frame 2: Olhos entreabertos
+    npSetLED(10, 255, 255, 0); // Olho esquerdo superior
+    npSetLED(11, 255, 255, 0); // Olho esquerdo inferior
+    npSetLED(13, 255, 255, 0); // Olho direito superior
+    npSetLED(14, 255, 255, 0); // Olho direito inferior
+    npWrite();
+    sleep_ms(frame_time);
+
+    // Frame 3: Olhos abertos, boca neutra
+    npSetLED(11, 255, 255, 0);  // Olho esquerdo
+    npSetLED(14, 255, 255, 0); // Olho direito
+    npWrite();
+    sleep_ms(frame_time);
+
+    // Frame 4: Olhos abertos, sorriso pequeno
+    npSetLED(16, 255, 0, 0);  // Canto da boca (esquerdo)
+    npSetLED(18, 255, 0, 0);  // Canto da boca (direito)
+    npWrite();
+    sleep_ms(frame_time);
+
+    // Frame 5: Olhos abertos, sorriso largo
+    npSetLED(21, 255, 0, 0);  // Sorriso (esquerdo)
+    npSetLED(23, 255, 0, 0);  // Sorriso (direito)
+    npWrite();
+    sleep_ms(frame_time);
+
+    // Limpa os LEDs ao final da animação
+    npClear();
+    npWrite();
 }
