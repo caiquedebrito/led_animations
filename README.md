@@ -50,6 +50,10 @@ git clone https://github.com/caiquedebrito/led_animations.git
 - Juan
 - Renan
 
+## Vídeo Demonstrativo
+
+[![Assista ao vídeo do projeto no YouTube](https://img.youtube.com/vi/JgjQNOM3ox0/hqdefault.jpg)](https://www.youtube.com/watch?v=JgjQNOM3ox0)
+
 ## Agradecimentos
 
 Gostaríamos de agradecer à equipe do Embarcatech por proporcionar esta atividade desafiadora e enriquecedora. Foi uma experiência nova que agregou bastante a cada integrante do grupo, tanto individualmente quanto coletivamente, permitindo-nos desenvolver habilidades práticas em sistemas embarcados e colaboração em equipe.
