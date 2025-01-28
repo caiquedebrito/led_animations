@@ -52,7 +52,7 @@ git clone https://github.com/caiquedebrito/led_animations.git
 
 ## Apresentação do resultados
 
-https://github.com/user-attachments/assets/3a28394f-6d64-4897-b443-c60d66a058d1
+https://github.com/user-attachments/assets/fa5e65ee-2f80-46d3-83c2-ccc9a569dc3b
 
 ## Vídeo Demonstrativo
 
