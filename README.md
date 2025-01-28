@@ -50,6 +50,10 @@ git clone https://github.com/caiquedebrito/led_animations.git
 - Juan
 - Renan
 
+## Apresentação do resultados
+
+https://github.com/user-attachments/assets/3a28394f-6d64-4897-b443-c60d66a058d1
+
 ## Vídeo Demonstrativo
 
 [![Assista ao vídeo do projeto no YouTube](https://img.youtube.com/vi/JgjQNOM3ox0/hqdefault.jpg)](https://www.youtube.com/watch?v=JgjQNOM3ox0)
